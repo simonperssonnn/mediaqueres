@@ -1,0 +1,217 @@
+body 
+{
+background: url(12_col.gif) center top repeat-y;
+background-size: 89%;
+}
+
+
+/*Bigger screens*/
+#container 
+{
+  width: 89%;
+  height: 100vh; 
+  margin: 0 auto;
+  display: grid; 
+  gap: 2%;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+   "header header header header header header header header header header header header"
+   "box1 box1 box2 box2 box2 box2 box2 box2 box2 box2 box3 box3"
+   "content content content content content content content content content sidebar sidebar sidebar"
+   "footer footer footer footer footer footer footer footer footer footer footer footer";
+  }
+
+
+.header
+{
+  grid-area: header;
+  border: 1px solid black; 
+}
+
+.box1
+{
+    grid-area: box1;
+    border: 1px solid black;
+}
+.box2
+{
+    grid-area: box2;
+    border: 1px solid black;
+}
+.box3
+{
+    grid-area: box3;
+    border: 1px solid black;
+}
+
+.content
+{
+    grid-area: content;
+    border: 1px solid black;
+}
+
+.sidebar
+{
+    grid-area: sidebar;
+    border: 1px solid black;
+}
+
+#footer
+{
+  grid-area: footer; 
+}
+
+.footersection1
+{
+    grid-area: footersection1;
+  border: 1px solid black;
+}
+
+
+.footersection2
+{
+    grid-area: footersection2;
+  border: 1px solid black;
+}
+
+.footersection3
+{
+    grid-area: footersection3;
+  border: 1px solid black;
+}
+
+.footersection4
+{
+    grid-area: footersection4;
+  border: 1px solid black;
+}
+
+
+#footer
+{
+    grid-area: footer;
+    border: solid 1px black;
+    height: auto;
+    display: grid; 
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-areas: 
+    "footersection1 footersection1 footersection1 footersection2 footersection2 footersection2 footersection3 footersection3 footersection3 footersection4 footersection4 footersection4 " ;
+    
+}
+.footersection1,
+.footersection2,
+.footersection3,
+.footersection4 {
+  display: grid;
+  border: 1px solid black;
+  margin: 0.9em;
+  height: 150px;
+}
+
+
+/*Smaller computer screens*/
+@media screen and (min-width: 960px) and (max-width: 1200px)
+{
+  #container 
+  {
+    gap: 2%;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+    "header header header header header header header header header header header header"
+    "box1 box1 box1 box2 box2 box2 box2 box2 box2 box3 box3 box3"
+    "content content content content content content content content sidebar sidebar sidebar sidebar"
+    "footer footer footer footer footer footer footer footer footer footer footer footer";
+        
+  
+    }
+  
+
+
+
+  #footer
+  {
+      border: solid 1px black; 
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(1, 1fr);
+      grid-template-areas:
+      "footersection1 footersection1 footersection1 footersection2 footersection2 footersection2 footersection3 footersection3 footersection3 footersection4 footersection4 footersection4 " ;
+  }
+
+
+
+}
+
+
+/*Tablets*/
+@media screen and (min-width: 768px) and (max-width: 960px)
+{
+    #container 
+    {
+      gap: 2%;
+      grid-template-rows: repeat(4, 1fr);
+      grid-template-areas:
+          "header header header header header header header header header header header header"
+          "box1 box1 box1 box1 box2 box2 box2 box2 box3 box3 box3 box3"
+          "content content content content content content sidebar sidebar sidebar sidebar sidebar sidebar"
+          "footer footer footer footer footer footer footer footer footer footer footer footer ";
+    
+      }
+    
+
+
+
+
+    #footer
+    {
+      border: solid 1px black; 
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-areas:
+      "footersection1 footersection1 footersection1 footersection1 footersection1 footersection1 footersection2 footersection2 footersection2 footersection2 footersection2 footersection2"
+      "footersection3 footersection3 footersection3 footersection3 footersection3 footersection3 footersection4 footersection4 footersection4 footersection4 footersection4 footersection4";
+    }
+
+
+}
+
+
+
+/*Phones*/
+@media screen and (max-width: 768px)
+{
+
+  #container 
+  {
+    
+  
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(7, 200px);
+    grid-template-areas:
+    "header"
+    "box1"
+    "box2"
+    "box3"
+    "content"
+    "sidebar" 
+    "footer";   
+    }
+
+    #footer
+    {
+    border: solid 1px black; 
+    display: grid; 
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 200px);
+    height: 790px;
+    grid-template-areas: 
+    "footersection1"
+    "footersection2"
+    "footersection3"
+    "footersection4";
+}
+
+
+
+}
